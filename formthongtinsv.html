@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin sinh viên</title>
+    <style>
+        #container{
+            background-color:blanchedalmond;
+            margin: auto;
+            padding: 0;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+
+     <script>
+        function Checkform() {
+            var hoten = document.getElementById("hoten").value
+            var email = document.getElementById("email").value
+            var gioitinh = document.getElementById("gioitinh").value
+            var huy = document.getElementById("huy").value
+            var errorElement = document.getElementById("error")
+
+            if (hoten === "" || email === "" || gioitinh === "") {
+                errorElement.textContent = "Vui lòng nhập đầy đủ thông tin."
+            } 
+            else { 
+                errorElement.textContent = ""
+                document.getElementById("mainForm").submit()
+            } 
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="container">
+        <form action="" id="mainForm" name="mainForm">
+            <table>
+                <h1 style="text-transform: uppercase; ">thông tin sinh viên</h1>
+                <tr>
+                    <td><label for="hoten">Họ tên</label></td>
+                    <td>
+                        <input type="text" id="hoten" name="hoten" placeholder="Nhập Họ tên">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>
+                        <input type="email" id="email" name="email" placeholder="Nhập email">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="gioitinh">Giới tính</label></td>
+                    <td>
+                        <input type="radio" id="gioitinh" name="gioitinh" value="Nam">Nam
+                        <br>
+                        <input type="radio" id="gioitinh" name="gioitinh" value="Nữ"> Nữ
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="sothich">Sở thích</label></td>
+                    <td>
+                        <input type="checkbox" id="sothich" name="sothich" value="Xem phim">Xem phim
+                        <br>
+                        <input type="checkbox" id="sothich" name="sothich" value="Nghe nhạc">Nghe nhạc
+                        <br>
+                        <input type="checkbox" id="sothich" name="sothich" value="Đọc báo">Đọc báo
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="congviec">Công việc</label></td>
+                    <td>
+                        <select id="congviec" name="congviec" id="congviec">
+                            <option value="học sinh">Học sinh</option>
+                            <option value="sinh viên">Sinh viên</option>
+                            <option value="giảng viên">Giảng viên</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr style="display: inline-block; align-items: center;">
+                    <td colspan="2">
+                        <button type="button" onclick="Checkform()">Gửi</button>
+                        <button type="reset" id="huy" value="" onclick="Checkform()">Hủy</button>
+                        <p id="error"></p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        
+    </div>
+</body>
+</html>

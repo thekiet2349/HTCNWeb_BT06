@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Lamp</title>
+    <script>
+        function turnOnLamp() {
+            var lampImage = document.getElementById("lampImage");
+            lampImage.src = "../IMG/lampon.jpg";
+        }
+
+        function turnOffLamp() {
+            var lampImage = document.getElementById("lampImage");
+            lampImage.src = "../IMG/lampoff.jpg";
+        }
+    </script>
+</head>
+<body>
+    <img id="lampImage" src="../IMG/lampoff.jpg" alt="Lamp Off" onmouseover="turnOnLamp()" onmouseout="turnOffLamp()">
+</body>
+</html>
